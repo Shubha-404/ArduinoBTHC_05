@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button on = findViewById(R.id.on);
         Button off = findViewById(R.id.off);
+        Button r = findViewById(R.id.R);
+        Button g = findViewById(R.id.G);
+        Button b = findViewById(R.id.B);
 
         // Set up BT Adapter
         btAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -64,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    opStream.write("1".getBytes());
-                    Toast.makeText(MainActivity.this, "Sending '1'", Toast.LENGTH_SHORT).show();
+                    opStream.write("9".getBytes());
+                    Toast.makeText(MainActivity.this, "Sending '9'", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
-                    Toast.makeText(MainActivity.this, "Error sending '1'", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Error sending '9'", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
             }
@@ -81,6 +84,43 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Sending '0'", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     Toast.makeText(MainActivity.this, "Error sending '0'", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        r.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    opStream.write("1".getBytes());
+                    Toast.makeText(MainActivity.this, "Sending '1'", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    Toast.makeText(MainActivity.this, "Error sending '1'", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+            }
+        });
+        g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    opStream.write("3".getBytes());
+                    Toast.makeText(MainActivity.this, "Sending '3'", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    Toast.makeText(MainActivity.this, "Error sending '3'", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    opStream.write("5".getBytes());
+                    Toast.makeText(MainActivity.this, "Sending '5'", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    Toast.makeText(MainActivity.this, "Error sending '5'", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
             }
